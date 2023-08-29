@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/.ae6ef861f99e3588114f8b03bd51859743ef3169-audit.json",
+    "files": [
+        {
+            "date": 1693315084480,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-29-08-19-success.log",
+            "hash": "c3e40041f54f41ef76eeb388a24b7b2a9e92fb53f5297fed5a202f4ac9008b73"
+        },
+        {
+            "date": 1693317643224,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-29-08-20-success.log",
+            "hash": "3b9d8847411671c3aa519c3aaa397f09a23bfd36f8fc90dcdb26b81c311e95e4"
+        }
+    ],
+    "hashType": "sha256"
+}
