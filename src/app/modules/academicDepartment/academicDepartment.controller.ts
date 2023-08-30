@@ -12,7 +12,7 @@ const insetIntoDB = catchAsync(async (req: Request, res: Response) => {
   sendResponse<AcademicDepartment>(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: 'Academic semester created successfully',
+    message: 'Academic department created successfully',
     data: result,
   });
 });
@@ -26,7 +26,7 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: 'Retrieve all academic semester successfully',
+    message: 'Retrieve all academic department successfully',
     meta: result.meta,
     data: result.data,
   });
@@ -41,7 +41,7 @@ const getSingleAcademicDepartmentById = catchAsync(
     sendResponse<AcademicDepartment>(res, {
       success: true,
       statusCode: httpStatus.OK,
-      message: 'Retrieve single academic semester successfully',
+      message: 'Retrieve single academic department successfully',
       data: result,
     });
   }
