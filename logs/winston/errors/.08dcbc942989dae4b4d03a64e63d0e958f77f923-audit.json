@@ -14,6 +14,31 @@
             "date": 1693317643347,
             "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/errors/phu-2023-29-08-20-error.log",
             "hash": "d0115df498e7ea2a8d692934d8c8dc328f232c68e6351c0a152b50d3cfbeb76d"
+        },
+        {
+            "date": 1693327855261,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/errors/phu-2023-29-08-22-error.log",
+            "hash": "64cf0b7a36e6faa2cd766f93595d053bda510353811a9d723cb39885b0a4c380"
+        },
+        {
+            "date": 1693328465137,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/errors/phu-2023-29-08-23-error.log",
+            "hash": "f047d37711a04558bae865ed19edfe8d1fb86492d2bbbc095bd62dc6ee81a274"
+        },
+        {
+            "date": 1693332121822,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/errors/phu-2023-30-08-00-error.log",
+            "hash": "be07cb4ba769830d21089ac0bbc68372a94be44c7848d30670c24664a9e680a5"
+        },
+        {
+            "date": 1693370408519,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/errors/phu-2023-30-08-10-error.log",
+            "hash": "98b46afdc9cc8787f912a528dcd7ce02c5e816803aeb3022e00c9a7a747d23a0"
+        },
+        {
+            "date": 1693371628283,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/errors/phu-2023-30-08-11-error.log",
+            "hash": "97ef3d59680daf8601a390305a41d5d3d157b775b542cdd9ed1daaef3c4bb66c"
         }
     ],
     "hashType": "sha256"

@@ -1,24 +1,24 @@
-import { AcademicSemester, Prisma } from '@prisma/client';
+import { AcademicFaculty, Prisma } from '@prisma/client';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
-import { AcademicSemesterSearchAbleField } from './academicSemester.constants';
-import { IAcademicSemesterFilter } from './academicSemester.interface';
+import { AcademicFacultySearchAbleField } from './academicFaculty.constants';
+import { IAcademicFacultyFilter } from './academicFaculty.interface';
 
-const insetIntoDB = async (
-  data: AcademicSemester
-): Promise<AcademicSemester> => {
-  const result = await prisma.academicSemester.create({
+const insertIntoDB = async (
+  data: AcademicFaculty
+): Promise<AcademicFaculty> => {
+  const result = await prisma.academicFaculty.create({
     data,
   });
   return result;
 };
 
-const getAllFromDB = async (
-  filters: IAcademicSemesterFilter,
+const getAllFaculty = async (
+  filters: IAcademicFacultyFilter,
   options: IPaginationOptions
-): Promise<IGenericResponse<AcademicSemester[]>> => {
+): Promise<IGenericResponse<AcademicFaculty[]>> => {
   const { page, limit, skip } = paginationHelpers.calculatePagination(options);
   const { searchTerm, ...filterData } = filters;
 
@@ -26,7 +26,7 @@ const getAllFromDB = async (
 
   if (searchTerm) {
     andCondition.push({
-      OR: AcademicSemesterSearchAbleField.map(field => ({
+      OR: AcademicFacultySearchAbleField.map(field => ({
         [field]: {
           contains: searchTerm,
           mode: 'insensitive',
@@ -48,7 +48,7 @@ const getAllFromDB = async (
   const whereConditions: Prisma.AcademicSemesterWhereInput =
     andCondition.length > 0 ? { AND: andCondition } : {};
 
-  const result = await prisma.academicSemester.findMany({
+  const result = await prisma.academicFaculty.findMany({
     where: whereConditions,
     skip,
     take: limit,
@@ -61,7 +61,8 @@ const getAllFromDB = async (
             createdAt: 'desc',
           },
   });
-  const total = await prisma.academicSemester.count();
+
+  const total = await prisma.academicFaculty.count();
 
   return {
     meta: {
@@ -73,20 +74,19 @@ const getAllFromDB = async (
   };
 };
 
-const getSingleAcademicSemesterById = async (
+const getSingleFaculty = async (
   id: string
-): Promise<AcademicSemester | null> => {
-  const result = await prisma.academicSemester.findUnique({
+): Promise<AcademicFaculty | null> => {
+  const result = await prisma.academicFaculty.findUnique({
     where: {
       id,
     },
   });
-
   return result;
 };
 
-export const AcademicSemesterService = {
-  insetIntoDB,
-  getAllFromDB,
-  getSingleAcademicSemesterById,
+export const AcademicFacultyService = {
+  insertIntoDB,
+  getSingleFaculty,
+  getAllFaculty,
 };
