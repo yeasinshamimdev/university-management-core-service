@@ -91,8 +91,35 @@ const getSingleAcademicDepartmentById = async (
   return result;
 };
 
+const updateIntoDB = async (
+  id: string,
+  payload: Partial<AcademicDepartment>
+) => {
+  const result = await prisma.academicDepartment.update({
+    where: {
+      id,
+    },
+    data: payload,
+    include: {
+      academicFaculty: true,
+    },
+  });
+  return result;
+};
+
+const deleteFromDB = async (id: string) => {
+  const result = await prisma.academicDepartment.delete({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
+
 export const AcademicDepartmentService = {
   insetIntoDB,
   getAllFromDB,
   getSingleAcademicDepartmentById,
+  updateIntoDB,
+  deleteFromDB,
 };

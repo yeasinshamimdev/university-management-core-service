@@ -44,6 +44,26 @@
             "date": 1693375248817,
             "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-30-08-12-success.log",
             "hash": "060f8f638266abcae2ed48b69774154eafe64ab2dc2c17ff7f52c4b115af6830"
+        },
+        {
+            "date": 1693414620452,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-30-08-22-success.log",
+            "hash": "3c0aafa9439dfb278e32797efc3531042add01b7c943fd381504db8de319e1d3"
+        },
+        {
+            "date": 1693415572079,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-30-08-23-success.log",
+            "hash": "8cb2ad1f3a2bf75a529ad2654e289f9652dec205c6b83121234649759b7c2e18"
+        },
+        {
+            "date": 1693486904903,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-31-08-19-success.log",
+            "hash": "b779a4aa63482961ba491550981ceee9a2b6e2ce7fd37971d7680e5c144542c4"
+        },
+        {
+            "date": 1693533699480,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-01-09-08-success.log",
+            "hash": "075a8ed8a775d80e754fa5479764377877573355a3eb62661d9b35e8bfd85b29"
         }
     ],
     "hashType": "sha256"

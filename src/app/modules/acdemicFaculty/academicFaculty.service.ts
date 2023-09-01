@@ -3,7 +3,7 @@ import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
-import { AcademicFacultySearchAbleField } from './academicFaculty.constants';
+import { academicFacultySearchableFields } from './academicFaculty.constants';
 import { IAcademicFacultyFilter } from './academicFaculty.interface';
 
 const insertIntoDB = async (
@@ -26,7 +26,7 @@ const getAllFaculty = async (
 
   if (searchTerm) {
     andCondition.push({
-      OR: AcademicFacultySearchAbleField.map(field => ({
+      OR: academicFacultySearchableFields.map(field => ({
         [field]: {
           contains: searchTerm,
           mode: 'insensitive',
@@ -85,8 +85,32 @@ const getSingleFaculty = async (
   return result;
 };
 
+const updateOneInDB = async (
+  id: string,
+  payload: Partial<AcademicFaculty>
+): Promise<AcademicFaculty> => {
+  const result = await prisma.academicFaculty.update({
+    where: {
+      id,
+    },
+    data: payload,
+  });
+  return result;
+};
+
+const deleteByIdFromDB = async (id: string): Promise<AcademicFaculty> => {
+  const result = await prisma.academicFaculty.delete({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
+
 export const AcademicFacultyService = {
   insertIntoDB,
   getSingleFaculty,
   getAllFaculty,
+  updateOneInDB,
+  deleteByIdFromDB,
 };
