@@ -64,6 +64,11 @@
             "date": 1693533699480,
             "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-01-09-08-success.log",
             "hash": "075a8ed8a775d80e754fa5479764377877573355a3eb62661d9b35e8bfd85b29"
+        },
+        {
+            "date": 1693537352906,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-01-09-09-success.log",
+            "hash": "15eea2a1676a8e32771c6d63610850af321f63a8fb5466a4c5c52b054e79b76b"
         }
     ],
     "hashType": "sha256"
