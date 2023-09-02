@@ -114,6 +114,21 @@
             "date": 1693623925761,
             "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-02-09-09-success.log",
             "hash": "fbdb697de8b39d525e8d2ef922cdfb96de5eb3bcf847d477a19790827b9a5b73"
+        },
+        {
+            "date": 1693627246420,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-02-09-10-success.log",
+            "hash": "662c6e8ed86d8319be763291d58eb606a75348d4c5323da4561fc750110f6560"
+        },
+        {
+            "date": 1693630941166,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-02-09-11-success.log",
+            "hash": "a45cb967264084e83d2343cfa21987f5fdf5a9aeb29fb2d54d2d670ab338d6ac"
+        },
+        {
+            "date": 1693660168339,
+            "name": "/home/shamim/my-drive/course/next-level/modules/module-35/university-management-core-service-starter/logs/winston/successes/phu-2023-02-09-19-success.log",
+            "hash": "b6d070b7c8019a626895c45943085963160b47e09361220bb8a9ff35e08288bb"
         }
     ],
     "hashType": "sha256"
