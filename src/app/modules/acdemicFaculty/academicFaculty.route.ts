@@ -9,9 +9,11 @@ const router = express.Router();
 
 router.get('/:id', AcademicFacultyController.getSingleFaculty);
 router.get('/', AcademicFacultyController.getAllFaculty);
+
 router.post(
   '/create',
   validateRequest(AcademicFacultyZodValidation.create),
+  auth(ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.ADMIN),
   AcademicFacultyController.insertIntoDB
 );
 

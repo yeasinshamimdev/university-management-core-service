@@ -3,27 +3,30 @@ import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
 import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
-import { facultyFilterableFields } from './faculty.constants';
-import { FacultyService } from './faculty.service';
+import { semesterRegistrationFilterableFields } from './semesterRegistration.constants';
+import { SemesterRegistrationService } from './semesterRegistration.service';
 
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
-  const result = await FacultyService.insertIntoDB(req.body);
+  const result = await SemesterRegistrationService.insertIntoDB(req.body);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculty created successfully',
+    message: 'Semester Registration created',
     data: result,
   });
 });
 
 const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
-  const filters = pick(req.query, facultyFilterableFields);
+  const filters = pick(req.query, semesterRegistrationFilterableFields);
   const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
-  const result = await FacultyService.getAllFromDB(filters, options);
+  const result = await SemesterRegistrationService.getAllFromDB(
+    filters,
+    options
+  );
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculties fetched successfully',
+    message: 'SemesterRegistrations fetched successfully',
     meta: result.meta,
     data: result.data,
   });
@@ -31,67 +34,55 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
 
 const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await FacultyService.getByIdFromDB(id);
+  const result = await SemesterRegistrationService.getByIdFromDB(id);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculty fetched successfully',
+    message: 'SemesterRegistration fetched successfully',
     data: result,
   });
 });
 
 const updateOneInDB = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await FacultyService.updateOneInDB(id, req.body);
+  const result = await SemesterRegistrationService.updateOneInDB(id, req.body);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculty updated successfully',
+    message: 'SemesterRegistration updated successfully',
     data: result,
   });
 });
 
 const deleteByIdFromDB = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await FacultyService.deleteByIdFromDB(id);
+  const result = await SemesterRegistrationService.deleteByIdFromDB(id);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculty delete successfully',
+    message: 'SemesterRegistration deleted successfully',
     data: result,
   });
 });
 
-const assignCourses = catchAsync(async (req: Request, res: Response) => {
-  const { id } = req.params;
-  console.log(req.body.faculties);
-  const result = await FacultyService.assignCourses(id, req.body.courses);
+const startMyRegistration = catchAsync(async (req: Request, res: Response) => {
+  const user = (req as any).user;
+  const result = await SemesterRegistrationService.startMyRegistration(
+    user.userId
+  );
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Course faculty assigned successfully',
+    message: 'Student SemesterRegistration started successfully',
     data: result,
   });
 });
 
-const removeCourses = catchAsync(async (req: Request, res: Response) => {
-  const { id } = req.params;
-  console.log(req.body.faculties);
-  const result = await FacultyService.removeCourses(id, req.body.courses);
-  sendResponse(res, {
-    statusCode: httpStatus.OK,
-    success: true,
-    message: 'Course faculty deleted successfully',
-    data: result,
-  });
-});
-
-export const FacultyController = {
+export const SemesterRegistrationController = {
   insertIntoDB,
   getAllFromDB,
   getByIdFromDB,
   updateOneInDB,
   deleteByIdFromDB,
-  assignCourses,
-  removeCourses,
+  startMyRegistration,
 };
